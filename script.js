@@ -1,17 +1,22 @@
 var minutes;
 var seconds;
 var interval;
+var flagPause=false;
 var spanMin=document.querySelector("#spanMin");
 var spanSec=document.querySelector("#spanSec");
 
 var buttonStart=document.querySelector("#buttonStart");
 buttonStart.addEventListener("click",funcStart);
 
+var buttonPause=document.querySelector("#buttonPause");
+buttonPause.addEventListener("click",funcPause);
+
 var buttonStop=document.querySelector("#buttonStop");
 buttonStop.addEventListener("click",funcStop);
 
 function funcStart() {
     console.log("start");
+    if(!flagPause){
     if(checkInput()){
         minutes=+document.querySelector("#inputMinutes").value;
         seconds=+document.querySelector("#inputSeconds").value;
@@ -22,6 +27,14 @@ function funcStart() {
     else{
         funcStop();
     }
+}
+else{
+    interval=setInterval(countDown,1000);
+}
+}
+function funcPause() {
+    clearInterval(interval);
+    flagPause=true;
 }
 function funcStop() {
     clearInterval(interval);
