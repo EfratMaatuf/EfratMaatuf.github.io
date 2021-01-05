@@ -71,6 +71,7 @@ function checkInput() {
     document.querySelector("#error").style.display="none";
     return true;
 }
+
 async function end() {
     var allElements=document.querySelectorAll("body>*");
     for (var i = 0; i < allElements.length ; i++) {
