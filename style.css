@@ -57,9 +57,13 @@ progress {
   height: 65px;
   mix-blend-mode: luminosity;
 }
-
-.lds-ripple {
+.loading {
   display: none;
+  height: 100%;
+  width: 100%;
+}
+.lds-ripple {
+  display: block;
   position: relative;
   width: 80px;
   height: 80px;
