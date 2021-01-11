@@ -1,20 +1,23 @@
 var minutes;
 var seconds;
+
 var interval="undefined";
 var flagPause=false;
 var spanMin=document.querySelector("#spanMin");
 var spanSec=document.querySelector("#spanSec");
 
-var buttonStart=document.querySelector("#buttonStart");
-buttonStart.addEventListener("click",funcStart);
 
-var buttonPause=document.querySelector("#buttonPause");
-buttonPause.addEventListener("click",funcPause);
+var buttonStart = document.querySelector("#buttonStart");
+buttonStart.addEventListener("click", funcStart);
 
-var buttonStop=document.querySelector("#buttonStop");
-buttonStop.addEventListener("click",funcStop);
+var buttonPause = document.querySelector("#buttonPause");
+buttonPause.addEventListener("click", funcPause);
+
+var buttonStop = document.querySelector("#buttonStop");
+buttonStop.addEventListener("click", funcStop);
 
 function funcStart() {
+
     console.log("start");
     if(!flagPause){
         if(checkInput()){
@@ -51,32 +54,34 @@ function funcStop() {
     document.querySelector("#inputSeconds").disabled=false;
     document.querySelector("progress").value=100;
     flagPause=false;
+
 }
 function countDown() {
-    seconds--;
-    if(seconds != -1){
-        display(spanSec,seconds);
-    }else{
-        if(minutes != 0){
-            minutes--;
-            display(spanMin,minutes);
-            seconds=59;
-            display(spanSec,seconds);
-        }else{
-            clearInterval(interval);
-            end();
-        }
-    }    
-}
-function display(span,num) {
-    if(num>9){
-        span.innerText=num;
-    }else{
-        span.innerText="0"+num;
+  seconds--;
+  if (seconds != -1) {
+    display(spanSec, seconds);
+  } else {
+    if (minutes != 0) {
+      minutes--;
+      display(spanMin, minutes);
+      seconds = 59;
+      display(spanSec, seconds);
+    } else {
+      clearInterval(interval);
+      end();
     }
-    var min=+document.querySelector("#inputMinutes").value;
-    var sec=+document.querySelector("#inputSeconds").value;
-    document.querySelector("progress").value=((minutes*60+seconds)/(min*60+sec))*100;
+  }
+}
+function display(span, num) {
+  if (num > 9) {
+    span.innerText = num;
+  } else {
+    span.innerText = "0" + num;
+  }
+  var min = +document.querySelector("#inputMinutes").value;
+  var sec = +document.querySelector("#inputSeconds").value;
+  document.querySelector("progress").value =
+    ((minutes * 60 + seconds) / (min * 60 + sec)) * 100;
 }
 function checkInput() {
     var min=+document.querySelector("#inputMinutes").value;
@@ -115,3 +120,4 @@ async function end() {
     document.querySelector("#type").innerText=json.type;
     document.querySelector(".lds-ripple").style.display="none";
 }
+
