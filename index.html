@@ -3,74 +3,41 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CountDown</title>
-
+    <title>Document</title>
+    <script src="script.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.css"
+    />
   </head>
   <body>
-    <div id="input">
+    <div class="my-slider">
       <div>
-        <input
-          id="inputMinutes"
-          type="number"
-          min="0"
-          max="60"
-          placeholder="0"
+        <img
+          src="https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+          alt=""
         />
-        <br />
-        <span>Minutes</span>
       </div>
-      <div id="Colon">:</div>
       <div>
-        <input
-          id="inputSeconds"
-          type="number"
-          min="0"
-          max="59"
-          placeholder="0"
+        <img
+          src="https://images.pexels.com/photos/1295138/pexels-photo-1295138.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+          alt=""
         />
-        <br />
-        <span>Seconds</span>
       </div>
-    </div>
-    <div id="error">aaaaa</div>
-    <div id="divButton">
-      <button id="buttonStart">Start</button>
-      <button id="buttonPause">Pause</button>
-      <button id="buttonStop">Stop</button>
-    </div>
-    <div id="timer">
-      <span id="spanMin">00</span>
-      <span>:</span>
-      <span id="spanSec">00</span>
-    </div>
-    <div id="divPro">
-      <progress max="100" value="0"></progress>
-    </div>
-    <div class="loading">
-      <div class="lds-ripple">
-        <div></div>
-        <div></div>
+      <div>
+        <img
+          src="https://images.pexels.com/photos/3510393/pexels-photo-3510393.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+          alt=""
+        />
       </div>
-    </div>
-    <div id="end">
-      <img id="imgBored" src="i-m-bored3.jpg" />
-      <div id="textEnd">
-        <div class="text">We found you an activity to fight boredom:</div>
-        <div id="activity" class="variableText"></div>
-        <br />
-        <br />
-        <div class="text">participants:</div>
-        <div id="participants" class="variableText"></div>
-        <br />
-        <br />
-        <div class="text">Activity Type:</div>
-        <div id="type" class="variableText"></div>
-        <div>
-          <button id="buttonClose" onclick="closeBored()">Close</button>
-        </div>
+      <div>
+        <img
+          src="https://images.pexels.com/photos/189349/pexels-photo-189349.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+          alt=""
+        />
       </div>
     </div>
   </body>
-  <script src="script.js" defer></script>
 </html>
